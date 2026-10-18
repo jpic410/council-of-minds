@@ -1,4 +1,5 @@
 from agent import Agent
+from analysis import Analysis
 
 
 def main():
@@ -18,6 +19,14 @@ def main():
         "Pragmatic and profit-oriented",
     )
     print(investor.introduction())
+
+    my_idea = "My Business Idea"
+
+    result = skeptic.evaluate(my_idea)
+
+    print(result.initial_analysis)
+    print(result.questions)
+    
 
     
 
