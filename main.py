@@ -1,5 +1,6 @@
 from agent import Agent
 from analysis import Analysis
+from council import Council
 
 
 def main():
@@ -20,12 +21,15 @@ def main():
     )
     print(investor.introduction())
 
-    my_idea = "My Business Idea"
+    idea = "My fantastic Business idea!"
 
-    result = skeptic.evaluate(my_idea)
+    council = Council([skeptic, investor])
+    eval = council.evaluate(idea)
+    for analysis in eval:
+        print(analysis.agent_name)
+        print(analysis.initial_analysis)
 
-    print(result.initial_analysis)
-    print(result.questions)
+
     
 
     
